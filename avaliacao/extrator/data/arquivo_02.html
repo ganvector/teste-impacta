@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="pt-br" >
+<head >
+<link rel="shortcut icon" href="imagens/icons/favicons/favicon_rj.ico" /><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="robots" content="noindex" />
+<title>:: eproc - Consulta Processual - Detalhes do Processo  ::</title>
+<link href='css/tooltip.css' rel='stylesheet' type='text/css' media='all'/><link rel='stylesheet' href='css/dist/bundle.css?1.536'><link rel='stylesheet' href='css/dist/bundle-infra.css?1.536'><link rel='stylesheet' href='css/src/bootstrap-select.css?1.536'>
+			<link href="infra_css/infra-barra-progresso.css?1.536" rel="stylesheet" type="text/css" media="all" /><link href="infra_css/infra-impressao-global.css?1.536" rel="stylesheet" type="text/css" media="print" />
+	<link href="infra_css/infra-ajax.css?1.536" rel="stylesheet" type="text/css" media="all" />
+				<link href="infra_js/calendario/infra-calendario.css?1.536" rel="stylesheet" type="text/css" media="all" />
+				<link href="infra_js/mapa/infra-mapa.css?1.536" rel="stylesheet" type="text/css" media="all" />
+		<link href="infra_js/jquery/jquery-ui-1.11.1/jquery-ui.min.css?1.11.1" rel="stylesheet" type="text/css" media="all" />
+<link href="infra_js/jquery/jquery-ui-1.11.1/jquery-ui.structure.min.css?1.11.1" rel="stylesheet" type="text/css" media="all" />
+<link href="infra_js/jquery/jquery-ui-1.11.1/jquery-ui.theme.min.css?1.11.1" rel="stylesheet" type="text/css" media="all" />
+<link href="infra_js/multiple-select/multiple-select.css?1.536" rel="stylesheet" type="text/css" media="all" />
+<style type="text/css" >
+<!--/*--><![CDATA[/*><!--*/
+    #tableRelacionado {border:none; width: auto; border:none; float:left; display:inline; position:relative; font-size: 12px; margin-top:-2px;}
+    #lblProcRel{font-size: 1.2em; display:inline; float:left; margin-left:30px;}
+/*]]>*/-->
+</style>
+<script type="text/javascript">var INFRA_PATH_IMAGENS='infra_css/imagens',INFRA_PATH_JS='infra_js',INFRA_PATH_CSS='infra_css';</script>
+				<script type="text/javascript" src="js/dist/main.js?1.536"></script>
+				<script type="text/javascript" charset="utf-8" src="infra_js/jquery/jquery-ui-1.11.1/jquery-ui.min.js?1.11.1"></script>
+				<script type="text/javascript" charset="utf-8" src="infra_js/multiple-select/jquery.multiple.select.js?1.536"></script>
+				<script type="text/javascript" charset="utf-8" src="infra_js/ddslick/jquery.ddslick.min.js?1.536"></script>
+				<script type="text/javascript" charset="iso-8859-1" src="infra_js/InfraUtil.js?1.536"></script>
+				<script type="text/javascript" charset="iso-8859-1" src="infra_js/InfraCookie.js?1.536"></script>
+				<script type="text/javascript" charset="iso-8859-1" src="infra_js/InfraUpload.js?1.536"></script>
+				<script type="text/javascript" charset="iso-8859-1" src="infra_js/InfraMenu.js?1.536"></script>
+				<script type="text/javascript" charset="iso-8859-1" src="infra_js/InfraBotaoMenu.js?1.536"></script>
+				<script type="text/javascript" charset="iso-8859-1" src="infra_js/InfraAcaoMenu.js?1.536"></script>
+				<script type="text/javascript" charset="iso-8859-1" src="infra_js/InfraTabelaDinamica.js?1.536"></script>
+				<script type="text/javascript" charset="iso-8859-1" src="infra_js/InfraLupas.js?1.536"></script>
+				<script type="text/javascript" charset="iso-8859-1" src="infra_js/InfraSelectEditavel.js?1.536"></script>
+				<script type="text/javascript" charset="iso-8859-1" src="infra_js/InfraAjax.js?1.536"></script>
+				<script type="text/javascript" charset="iso-8859-1" src="infra_js/InfraTooltip.js?1.536"></script>
+				<script type="text/javascript" charset="iso-8859-1" src="infra_js/calendario/InfraCalendario.js?1.536"></script>
+				<script type="text/javascript" charset="iso-8859-1" src="infra_js/arvore/InfraArvore.js?1.536"></script>
+				<script type='text/javascript' charset='iso-8859-1' src='js/tooltip.js'></script>
+			  	<script type='text/javascript' src='js/funcoes.js?1.536'></script>
+			  	<script type='text/javascript' src='js/jquery.hotkeys.js'></script>
+			  	<script type='text/javascript' src='js/jquery.simulate.js'></script>				
+				<script type="text/javascript" src="js/script-especifico-bootstrap.js?1.536"></script>
+				<script type="text/javascript" src="js/src/bootstrap-select.js"></script>				<script type="text/javascript" src="js/funcoes.js?8.0.21-1.536"></script>
+<script type="text/javascript" charset="iso-8859-1" >
+<!--//--><![CDATA[//><!--
+
+
+//--><!]]>
+</script>
+
+<body onload="infraProcessarResize();infraProcessarMouseDown();">
+    <div id="divInfraAreaGlobal">
+        
+                    <div class="bootstrap-styles">
+                <nav id='navbar' class="navbar text-white d-xl-flex fixed-top bg-blue-grad ">
+                    <div class="container-fluid pl-0 pr-0">
+    <div class="d-flex align-items-center">
+                    <button href="#" id="menu-btn" title="Abrir menu"
+                    class="d-flex justify-content-center p-0 mdc-icon-button ">
+                <i class="material-icons navbar-icons">menu</i>
+            </button>
+        
+        <div><a href='http://www.jfrj.jus.br' title='http://www.jfrj.jus.br'>
+						<span class='pr-3 d-none text-white font-weight-bolder d-sm-block'>Seção Judiciária do Rio de Janeiro</span>
+						<span class='navbar-span pr-3 d-block d-sm-none'>jfrj</span>
+					</a>
+				</div>
+    </div>
+    <div class='top-search-bar d-none d-sm-block'>
+
+    </div>
+
+    <div class="d-flex">
+        
+            </div>
+</div>
+                </nav>
+                <nav id="mobile-search" class="navbar navbar-light d-xl-flex d-block d-md-none fixed-top bg-blue-grad toggle mobile-search-invisible">
+                    <div class="container-fluid">
+                        <div class="w-100 d-flex">
+                            <div class="flex-fill pt-2 d-sm-block ml-2">
+                                
+                            </div>
+
+                            <div class="pl-3 pt-0 align-items-center">
+                                <button id="search-close" class="p-0 mdc-icon-button d-flex navbar-icons justify-content-center" type="button">
+                                    <i class="material-icons">close</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        
+                    <div id='wrapper' class="abre-automaticamente">
+        
+                    <div class="bootstrap-styles">
+                <div id="sidebar-wrapper" class=" menu-dark ">
+                    <div class="menu-searchbox input-group input-group-sm">
+                        <input id="sidebar-searchbox" type="text" class="form-control menu-search-box" style="margin: 5px;" title="Pesquisar no menu (Alt + m)" placeholder="Pesquisar no Menu (Alt + m)">
+                    </div>
+                    <ul id="main-menu" class="sidebar-nav search-list">
+                        
+    <li class=''>
+
+        <a href="externo_controlador.php?acao=principal&amp;hash=3ad415f4fd6f25e121e85e40360dbcfb"
+           class="collapsed"
+           tabindex="0"
+           data-toggle=""
+           data-target="#menu-ul-1">
+            <span class="menu-item-text">Entrar no Sistema</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+            </li>
+
+    <li class=''>
+
+        <a href="externo_controlador.php?acao=assinatura_digital_externa&amp;hash=7977046b2ba51ec9d51072209c9ca11a"
+           class="collapsed"
+           tabindex="0"
+           data-toggle=""
+           data-target="#menu-ul-2">
+            <span class="menu-item-text">Assinador Digital de Documentos</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+            </li>
+
+    <li class=''>
+
+        <a href="externo_controlador.php?acao=pauta_audiencias&amp;hash=90a854ba87fed0ddd66114b7113fe285"
+           class="collapsed"
+           tabindex="0"
+           data-toggle=""
+           data-target="#menu-ul-3">
+            <span class="menu-item-text">Audiências</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+            </li>
+
+    <li class='has-submenu'>
+
+        <a href="#"
+           class="collapsed"
+           tabindex="0"
+           data-toggle="collapse"
+           data-target="#menu-ul-4">
+            <span class="menu-item-text">Cadastre-se AQUI!</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+                    <ul class="collapse" id="menu-ul-4">
+                
+    <li class=''>
+
+        <a href="externo_controlador.php?acao=selecionar_tipo_advogado_cadastrar&amp;hash=97f3351698ca59432c9dbbad3620a5a9"
+           class="collapsed"
+           tabindex="0"
+           data-toggle=""
+           data-target="#menu-ul-5">
+            <span class="menu-item-text">Cadastrar Advogado</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+            </li>
+
+    <li class=''>
+
+        <a href="externo_controlador.php?acao=selecionar_tipo_jus_postulandi_cadastrar&amp;hash=8204a11db8442174eaf367fdcf6652ac"
+           class="collapsed"
+           tabindex="0"
+           data-toggle=""
+           data-target="#menu-ul-6">
+            <span class="menu-item-text">Cadastrar Jus Postulandi</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+            </li>
+            </ul>
+            </li>
+
+    <li class='has-submenu'>
+
+        <a href="#"
+           class="collapsed"
+           tabindex="0"
+           data-toggle="collapse"
+           data-target="#menu-ul-8">
+            <span class="menu-item-text">Consulta Autenticidade de Certidões</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+                    <ul class="collapse" id="menu-ul-8">
+                
+    <li class=''>
+
+        <a href="externo_controlador.php?acao=consulta_autenticidade_certidao_narratoria&amp;hash=5d1c87afbc29deefbc73737e7e1f6722"
+           class="collapsed"
+           tabindex="0"
+           data-toggle=""
+           data-target="#menu-ul-10">
+            <span class="menu-item-text">Consulta Autenticidade de Certidão Narratória</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+            </li>
+
+    <li class=''>
+
+        <a href="externo_controlador.php?acao=consulta_autenticidade_certidao_execucao&amp;hash=db100ae1b8dcab7906353835351833d9"
+           class="collapsed"
+           tabindex="0"
+           data-toggle=""
+           data-target="#menu-ul-9">
+            <span class="menu-item-text">Consulta Autenticidade de Certidão de Execução</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+            </li>
+            </ul>
+            </li>
+
+    <li class=''>
+
+        <a href="externo_controlador.php?acao=consulta_autenticidade_documentos&amp;hash=7b5f1daf3c86f3844671c3d986bf2eb9"
+           class="collapsed"
+           tabindex="0"
+           data-toggle=""
+           data-target="#menu-ul-7">
+            <span class="menu-item-text">Consulta Autenticidade de Documentos</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+            </li>
+
+    <li class=''>
+
+        <a href="externo_controlador.php?acao=processo_consulta_publica&amp;hash=31552c89c24f8436cb56f4295ed0e7f7"
+           class="collapsed"
+           tabindex="0"
+           data-toggle=""
+           data-target="#menu-ul-11">
+            <span class="menu-item-text">Consulta Pública de Processos</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+            </li>
+
+    <li class=''>
+
+        <a href="externo_controlador.php?acao=fale&amp;hash=59c0ee7124e0a571ac427121f2c49f58"
+           class="collapsed"
+           tabindex="0"
+           data-toggle=""
+           data-target="#menu-ul-12">
+            <span class="menu-item-text">Fale Conosco</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+            </li>
+
+    <li class=''>
+
+        <a href="externo_controlador.php?acao=conciliacao_entrar&amp;hash=b562cfb9cb9cec3de5dcaa83fcc5bfa2"
+           class="collapsed"
+           tabindex="0"
+           data-toggle=""
+           data-target="#menu-ul-13">
+            <span class="menu-item-text">Fórum de Conciliação</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+            </li>
+
+    <li class=''>
+
+        <a href="externo_controlador.php?acao=legislacao&amp;hash=d7d9a00ff8c2e4c16dcc0209ae31d45c"
+           class="collapsed"
+           tabindex="0"
+           data-toggle=""
+           data-target="#menu-ul-14">
+            <span class="menu-item-text">Legislação</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+            </li>
+
+    <li class=''>
+
+        <a href="externo_controlador.php?acao=sessao_julgamento&amp;hash=ecb0f51f270f381a3cf8a625a3203dbe"
+           class="collapsed"
+           tabindex="0"
+           data-toggle=""
+           data-target="#menu-ul-15">
+            <span class="menu-item-text">Sessões de Julgamento TR</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+            </li>
+
+    <li class=''>
+
+        <a href="http://tutoriaiseproc.trf4.jus.br"
+           class="collapsed"
+           tabindex="0"
+           data-toggle=""
+           data-target="#menu-ul-16">
+            <span class="menu-item-text">Tutoriais</span>
+            <span class="sub-arrow material-icons">arrow_drop_down</span>
+        </a>
+
+            </li>
+                    </ul>
+                    <div id="empty-space" style="height: 200px"></div>
+                </div>
+            </div>
+                            <div id='page-content-wrapper' class="infra-styles ">
+                <div id='divInfraAreaTela' class='infraAreaTela'>
+                    <div id='divInfraAreaTelaD' class="container-fluid">
+                                                    <div class='bootstrap-styles' id='divInfraBarraLocalizacao'>
+				<div class='pl-0 pr-0 pt-1 col-md-12 justify-content-between d-flex'>
+				<h4 style='font-family: Oswald, sans-serif;'>Consulta Processual - Detalhes do Processo </h4></div>
+			</div>
+                                                    <form id="frmProcessoLista" method="post"
+          action="externo_controlador.php?acao=processo_selecionar&acao_origem=processo_consultar&acao_retorno=processo_consultar&hash=3072974ff058b4c7c591e4e32278a3ca">
+        <input type="hidden" id="hdnInfraTipoPagina" name="hdnInfraTipoPagina" value="1" />
+<div id="divInfraBarraComandosSuperior" class="infraBarraComandos">
+<input tabindex="451" type="button" name="btnImprimir" value="Imprimir" onclick="infraImprimirDiv('divInfraAreaProcesso');" class="infraButton" />&nbsp;
+<button tabindex="452" type="button" accesskey="V" name="btnVoltar" id="btnVoltar" value="Voltar" 
+    onclick="location.href='externo_controlador.php?acao=principal&acao_origem=processo_seleciona_publica&hash=428f9e7b804fa77b7880961b2704770f';" 
+            class="infraButton"><span class="infraTeclaAtalho">V</span>oltar</button>&nbsp;
+</div>
+<div id="divInfraAreaProcesso"><fieldset id="fldAssuntos" class="infraFieldset"><legend class="infraLegendObrigatorio">Capa do Processo</legend>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="lblNumProcesso">Nº do Processo: </label><label id="txtNumProcesso" class="infraLabelObrigatorio">5000404-31.2018.4.02.5112</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="lblAutuacao">Data de autuação: </label><label id="txtAutuacao" class="infraLabelObrigatorio">27/07/2018 16:09:08</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="lblSituacao">Situação: </label><label id="txtSituacao" class="infraLabelObrigatorio">MOVIMENTO</label><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="lblOrgaoJulgador">Órgão Julgador: </label><label id="txtOrgaoJulgador" class="infraLabelObrigatorio">Juízo Federal da 4ª VF do Rio de Janeiro</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="lblMagistrado">Juiz(a): </label><label id="txtMagistrado" class="infraLabelObrigatorio">ANDREA DAQUER BARSOTTI</label><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="lblClasse">Classe da ação: </label><label id="txtClasse" class="infraLabelObrigatorio">MANDADO DE SEGURANÇA</label><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="lblProcRel">Processos relacionados: </label><table id="tableRelacionado"><tr><tr><td><font size="1.2em"><a target="_blank" href="https://eproc.trf2.jus.br/eproc/externo_controlador.php?acao=processo_seleciona_publica&acao_origem=processo_consulta_publica&acao_retorno=processo_consulta_publica&num_processo=50004043120184025112&hash=8de0044fc5f759ec695783b0070b65ac"  >5000404-31.2018.4.02.5112/TRF2</a></font></td><td align="center" ><font size="1.2em">|</font></td><td >Relacionado no 2o. grau</td></tr></table></fieldset><br/><fieldset id="fldAssuntos" class="infraFieldset"><legend class="infraLegendObrigatorio">Assuntos</legend><table width="95%" class="infraTable" summary="Assuntos">
+<tr><th class="infraTh" width="15%">Código</th><th class="infraTh" width="75%">Descrição</th>
+                              <th class="infraTh" width="10%">Principal</th></tr>
+<tr class="infraTrClara"><td>01080308</td><td>Registro Profissional, Conselhos Regionais de Fiscalização Profissional e Afins, Organização Político-administrativa / Administração Pública, DIREITO ADMINISTRATIVO E OUTRAS MATÉRIAS DE DIREITO PÚBLICO</td><td align="center">Sim</td></tr>
+<tr class="infraTrEscura"><td>03040302</td><td>Conselhos Regionais e Afins (Anuidade), Contribuições Corporativas, Contribuições, DIREITO TRIBUTÁRIO</td><td align="center">Não</td></tr>
+</table>
+</fieldset><br/><fieldset id="fldPartes" class="infraFieldset"><legend class="infraLegendObrigatorio">Partes e Representantes</legend><table width="95%" class="infraTable" summary="Assuntos">
+<tr><th class="infraTh" width="50%">IMPETRANTE</th><th class="infraTh" width="50%">IMPETRADO</th></tr>
+<tr class="infraTrClara"><td>&nbsp;&nbsp;&nbsp; - NATIVITTA PLANEJAMENTOS PROJETOS E GERENCIAMENTO EM SAUDE E AMBIENTE EIRELI&nbsp;&nbsp;&nbsp;(11.0**************)<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALCIMAR PESSOA WON-HELD JUNIOR&nbsp;&nbsp;&nbsp;RJ080920<br/></td><td>&nbsp;&nbsp;&nbsp; - Chefe - CONSELHO REGIONAL DE ADMINISTRACAO - CRA-RJ - Rio de Janeiro</td></tr>
+<tr><th class="infraTh" colspan=2>INTERESSADO</th></tr><tr class="infraTrClara"><td align="center" colspan=2>&nbsp;&nbsp;&nbsp; CONSELHO REGIONAL DE ADMINISTRACAO - CRA-RJ&nbsp;&nbsp;&nbsp;(27.9**************)<br/>&nbsp;&nbsp;&nbsp; Advogado(s): CLAUDIA MARIA DA SILVA DE SOUZA<br/>MARCELO OLIVEIRA DE ALMEIDA<br/>ADRIANA GOMES SOBRAL<br/>MARIA MARTA GUIMARAES<br/>RICARDO DA CONCEICAO SILVEIRA<br/></td></tr>
+<tr><th class="infraTh" colspan=2>MPF</th></tr><tr class="infraTrClara"><td align="center" colspan=2>&nbsp;&nbsp;&nbsp; MINISTÉRIO PÚBLICO FEDERAL&nbsp;&nbsp;&nbsp;(03.6**************)</td></tr>
+</table>
+</fieldset><br/><fieldset id="fldInformacoesAdicionais" class="infraFieldset"><legend class="infraLegendObrigatorio">Informações Adicionais</legend><table width="100%" border="0" cellpadding="3" style="font-size:10px;"><td align="right"><label>Valor da Causa: </label></td><td><label class="infraLabelObrigatorio">1.508,41</label><td align="right"><label>Ação Coletiva de subst. processual: </label></td><td><label class="infraLabelObrigatorio">Não</label></td><td align="right"><label>Antecipação de Tutela: </label></td><td><label class="infraLabelObrigatorio">Indeferida</label></td></tr><tr><td align="right"><label>Criança e Adolescente: </label></td><td><label class="infraLabelObrigatorio">Não</label></td><td align="right"><label>Depósito Judicial: </label></td><td><label class="infraLabelObrigatorio">Não</label></td><td align="right"><label>Doença Grave: </label></td><td><label class="infraLabelObrigatorio">Não</label></td></tr><tr><td align="right"><label>Fórum de Conciliação requerido: </label></td><td><label class="infraLabelObrigatorio">Não</label></td><td align="right"><label>Grande devedor: </label></td><td><label class="infraLabelObrigatorio">Não</label></td><td align="right"><label>Idoso: </label></td><td><label class="infraLabelObrigatorio">Não</label></td></tr><tr><td align="right"><label>Justiça Gratuita: </label></td><td><label class="infraLabelObrigatorio">Não requerida</label></td><td align="right"><label>Penhora no rosto dos autos: </label></td><td><label class="infraLabelObrigatorio">Não</label></td><td align="right"><label>Penhora/apreensão de bens: </label></td><td><label class="infraLabelObrigatorio">Não</label></td></tr><tr><td align="right"><label>Pessoa com deficiência: </label></td><td><label class="infraLabelObrigatorio">Não</label></td><td align="right"><label>Petição Urgente: </label></td><td><label class="infraLabelObrigatorio">Não</label></td><td align="right"><label>Reconvenção: </label></td><td><label class="infraLabelObrigatorio">Não</label></td></tr><tr><td align="right"><label>Vista Ministério Público: </label></td><td><label class="infraLabelObrigatorio">Sim</label></td><td colspan="4"></td></tr></table></fieldset><br/><table width="95%" class="infraTable" summary="Assuntos">
+<tr><th class="infraTh">Evento</th><th class="infraTh">Data/Hora</th><th class="infraTh">Descrição</th><th class="infraTh">Usuário</th><th class="infraTh">Documentos</th></tr>
+<tr class="infraTrClara"><td>48</td><td>20/10/2019 23:59:59</td><td>Intimação Eletrônica - Confirmada - Refer. ao Evento: 47</td><td>SECJF</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>47</td><td>10/10/2019 12:49:44</td><td>Intimação Eletrônica - Expedida/Certificada - Refer. ao Evento: 46<br/>(IMPETRANTE -  NATIVITTA PLANEJAMENTOS PROJETOS E GERENCIAMENTO EM SAUDE E AMBIENTE EIRELI)<br/> Prazo: 10 dias Status:ABERTO<br/> Data inicial da contagem do prazo: 23/10/2019 00:00:00<br/> Data final: 07/11/2019 23:59:59</td><td>JRJ17380</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>46</td><td>10/10/2019 12:49:42</td><td>Despacho/Decisão - Determina Intimação</td><td>JRJ17380</td><td><a class="infraLinkDocumento" href="controlador.php?acao=acessar_documento_publico&doc=511570721293015546042200280551&evento=511570721293015546042200320253&key=475d6012b247e4553082ca3164b3837eaa89f303eaf174dc000716a2d2517404&hash=022d0bb5e558ec9ceca2a2c200385c39" target="_blank" data-mimetype="html" data-doc="511570721293015546042200280551"><img src="infra_css/imagens/consultar.gif" title="Visualizar Documento" alt="Visualizar" class="infraImgNormal" />DESPADEC1</a> </td></tr>
+<tr class="infraTrEscura"><td>45</td><td>10/10/2019 12:41:25</td><td>Autos com Juiz para Despacho/Decisão</td><td>JRJ14648</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>44</td><td>10/10/2019 12:39:31</td><td>Juntada - Peças Digitalizadas</td><td>JRJ14648</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>43</td><td>10/10/2019 12:39:06</td><td>Juntada - Peças Digitalizadas</td><td>JRJ14648</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>42</td><td>08/08/2019 18:09:13</td><td>Recebimento -  TRF2 -> RJRIO04 <BR>Número: 50004043120184025112</td><td>T210080</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>41</td><td>13/03/2019 14:26:46</td><td>Remessa Externa - RJRIO04 -> TRF2</td><td>JRJ12260</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>40</td><td>12/03/2019 01:11:13</td><td>Decurso de Prazo - Refer. ao Evento: 35</td><td>SECFP</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>39</td><td>28/02/2019 19:14:46</td><td>Juntada de certidão - suspensão do prazo - 01/03/2019 até 06/03/2019 Motivo: SUSPENSÃO DE PRAZOS - TRF2-PTP-2018/00829 - CARNAVAL</td><td>JRJ13072</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>38</td><td>15/02/2019 11:46:08</td><td>CONTRARRAZÕES</td><td>RJ080920</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>37</td><td>13/02/2019 01:02:42</td><td>Decurso de Prazo - Refer. ao Evento: 28</td><td>SECFP</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>36</td><td>09/02/2019 23:59:59</td><td>Intimação Eletrônica - Confirmada - Refer. ao Evento: 35</td><td>SECJF</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>35</td><td>30/01/2019 17:56:27</td><td>Intimação Eletrônica - Expedida/Certificada - Refer. ao Evento: 34<br/>(IMPETRANTE -  NATIVITTA PLANEJAMENTOS PROJETOS E GERENCIAMENTO EM SAUDE E AMBIENTE EIRELI)<br/> Prazo: 15 dias Status:FECHADO<br/> Data inicial da contagem do prazo: 13/02/2019 00:00:00<br/> Data final: 11/03/2019 23:59:59</td><td>JRJ16049</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>34</td><td>30/01/2019 17:56:27</td><td>Despacho/Decisão - Determina Intimação</td><td>JRJ16049</td><td><a class="infraLinkDocumento" href="controlador.php?acao=acessar_documento_publico&doc=511548861048540431151649449041&evento=511548861048540431151649459340&key=95aeb324ed064a4101e835bd9f0037e44469626916c1525546f1c0c3bb0da91e&hash=1cd34f14c4e5af640263f82ef8882b6d" target="_blank" data-mimetype="html" data-doc="511548861048540431151649449041"><img src="infra_css/imagens/consultar.gif" title="Visualizar Documento" alt="Visualizar" class="infraImgNormal" />DESPADEC1</a> </td></tr>
+<tr class="infraTrEscura"><td>33</td><td>30/01/2019 17:14:52</td><td>Autos com Juiz para Despacho/Decisão</td><td>jrj14887</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>32</td><td>21/01/2019 16:45:54</td><td>APELAÇÃO - Refer. ao Evento: 29</td><td>p04046</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>31</td><td>23/12/2018 23:59:59</td><td>Intimação Eletrônica - Confirmada - Refer. ao Evento: 28</td><td>SECJF</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>30</td><td>17/12/2018 09:41:53</td><td>Intimação Eletrônica - Confirmada - Refer. ao Evento: 29</td><td>p05013</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>29</td><td>13/12/2018 13:06:25</td><td>Intimação Eletrônica - Expedida/Certificada - Refer. ao Evento: 27<br/>(INTERESSADO -  CONSELHO REGIONAL DE ADMINISTRACAO - CRA-RJ)<br/> Prazo: 30 dias Status:FECHADO<br/> Data inicial da contagem do prazo: 19/12/2018 00:00:00<br/> Data final: 28/02/2019 23:59:59</td><td>JRJ16049</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>28</td><td>13/12/2018 13:06:25</td><td>Intimação Eletrônica - Expedida/Certificada - Refer. ao Evento: 27<br/>(IMPETRANTE -  NATIVITTA PLANEJAMENTOS PROJETOS E GERENCIAMENTO EM SAUDE E AMBIENTE EIRELI)<br/> Prazo: 15 dias Status:FECHADO<br/> Data inicial da contagem do prazo: 23/01/2019 00:00:00<br/> Data final: 12/02/2019 23:59:59</td><td>JRJ16049</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>27</td><td>13/12/2018 13:06:25</td><td>Sentença com Resolução de Mérito - Pedido Procedente - tipo A</td><td>JRJ16049</td><td><a class="infraLinkDocumento" href="controlador.php?acao=acessar_documento_publico&doc=511544711778971211134959285397&evento=511544711778971211134959290156&key=ca24e76d95572232bfe6cecd2a1a947ba68540c1b607cad5db6be87d7e45b6a5&hash=bb86123053e1d19504f8864fa020fd31" target="_blank" data-mimetype="html" data-doc="511544711778971211134959285397"><img src="infra_css/imagens/consultar.gif" title="Visualizar Documento" alt="Visualizar" class="infraImgNormal" />SENT1</a> </td></tr>
+<tr class="infraTrClara"><td>26</td><td>28/11/2018 09:19:21</td><td>PETIÇÃO</td><td>RJ080920</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>25</td><td>09/11/2018 14:29:54</td><td>Autos com Juiz para Sentença</td><td>jrj14887</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>24</td><td>16/10/2018 01:02:35</td><td>Decurso de Prazo - Refer. ao Evento: 13</td><td>SECFP</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>23</td><td>03/10/2018 13:36:45</td><td>PARECER - Refer. ao Evento: 20</td><td>MPF/RJ</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>22</td><td>03/10/2018 13:36:45</td><td>Intimação Eletrônica - Confirmada - Refer. ao Evento: 20</td><td>MPF/RJ</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>21</td><td>01/10/2018 22:14:07</td><td>Juntada de mandado cumprido - Refer. ao Evento: 16</td><td>JRJ11393</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>20</td><td>26/09/2018 16:27:20</td><td>Intimação Eletrônica - Expedida/Certificada - Refer. ao Evento: 12<br/>(MPF -  MINISTÉRIO PÚBLICO FEDERAL)<br/> Prazo: 10 dias Status:FECHADO<br/> Data inicial da contagem do prazo: 05/10/2018 00:00:00<br/> Data final: 19/10/2018 23:59:59</td><td>jrj14887</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>19</td><td>25/09/2018 17:39:47</td><td>PETIÇÃO - Refer. ao Evento: 14</td><td>g01013</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>18</td><td>25/09/2018 12:55:34</td><td>Recebido o mandado para cumprimento pelo oficial de justiça - Refer. ao Evento: 16</td><td>jrj14450</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>17</td><td>20/09/2018 23:59:59</td><td>Intimação Eletrônica - Confirmada - Refer. ao Evento: 13</td><td>SECJF</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>16</td><td>20/09/2018 19:13:52</td><td>Expedição de mandado - RJRIOSEMCI</td><td>JRJ10589</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>15</td><td>17/09/2018 12:07:36</td><td>Intimação Eletrônica - Confirmada - Refer. ao Evento: 14</td><td>g01013</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>14</td><td>10/09/2018 17:25:22</td><td>Intimação Eletrônica - Expedida/Certificada - Refer. ao Evento: 12<br/>(INTERESSADO -  CONSELHO REGIONAL DE ADMINISTRACAO - CRA-RJ)<br/> Prazo: 10 dias Status:FECHADO<br/> Data inicial da contagem do prazo: 19/09/2018 00:00:00<br/> Data final: 02/10/2018 23:59:59</td><td>JRJ16049</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>13</td><td>10/09/2018 17:25:22</td><td>Intimação Eletrônica - Expedida/Certificada - Refer. ao Evento: 12<br/>(IMPETRANTE -  NATIVITTA PLANEJAMENTOS PROJETOS E GERENCIAMENTO EM SAUDE E AMBIENTE EIRELI)<br/> Prazo: 15 dias Status:FECHADO<br/> Data inicial da contagem do prazo: 24/09/2018 00:00:00<br/> Data final: 15/10/2018 23:59:59</td><td>JRJ16049</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>12</td><td>10/09/2018 17:25:22</td><td>Despacho/Decisão - Liminar/Antecipação de Tutela Indeferida</td><td>JRJ16049</td><td><a class="infraLinkDocumento" href="controlador.php?acao=acessar_documento_publico&doc=511536608793252861055354446705&evento=511536608793252861055354450566&key=fd626d325029964fa30931ceec8f00791ba3a3dcaf6483bb19f76a0d0cd9f1b0&hash=f6f4a1d9ebca040032308b4d85b952bf" target="_blank" data-mimetype="html" data-doc="511536608793252861055354446705"><img src="infra_css/imagens/consultar.gif" title="Visualizar Documento" alt="Visualizar" class="infraImgNormal" />DESPADEC1</a> </td></tr>
+<tr class="infraTrEscura"><td>11</td><td>06/09/2018 16:42:28</td><td>Lavrada Certidão</td><td>jrj14887</td><td><a class="infraLinkDocumento" href="controlador.php?acao=acessar_documento_publico&doc=511536247147622981028845672038&evento=511536247147622981028845697606&key=3de68330cb306ba36189ee4ad04cc333ca6bd88103a6380e62f78c9a315aea31&hash=527bbeb612360daf56283046ba100fc1" target="_blank" data-mimetype="html" data-doc="511536247147622981028845672038"><img src="infra_css/imagens/consultar.gif" title="Visualizar Documento" alt="Visualizar" class="infraImgNormal" />CERT1</a> </td></tr>
+<tr class="infraTrClara"><td>10</td><td>06/09/2018 16:13:34</td><td>Autos com Juiz para Despacho/Decisão</td><td>jrj14887</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>9</td><td>05/09/2018 14:36:35</td><td>Redistribuído por sorteio em razão de incompetência - (RJITP01F para RJRIO04F)</td><td>JRJ15644</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>8</td><td>01/09/2018 01:02:36</td><td>Decurso de Prazo - Refer. ao Evento: 4</td><td>SECFP</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>7</td><td>29/08/2018 15:33:42</td><td>PETIÇÃO</td><td>RJ080920</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>6</td><td>09/08/2018 23:59:59</td><td>Intimação Eletrônica - Confirmada - Refer. ao Evento: 4</td><td>SECJF</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrEscura"><td>4</td><td>30/07/2018 20:08:58</td><td>Intimação Eletrônica - Expedida/Certificada - Despacho/Decisão - URGENTE - Refer. ao Evento: 3<br/>(IMPETRANTE -  NATIVITTA PLANEJAMENTOS PROJETOS E GERENCIAMENTO EM SAUDE E AMBIENTE EIRELI)<br/> Prazo: 15 dias Status:FECHADO<br/> Data inicial da contagem do prazo: 13/08/2018 00:00:00<br/> Data final: 31/08/2018 23:59:59</td><td>JRJ17374</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>3</td><td>30/07/2018 20:08:58</td><td>Despacho/Decisão - Interlocutória</td><td>JRJ17374</td><td><a class="infraLinkDocumento" href="controlador.php?acao=acessar_documento_publico&doc=511532991990119611035876484915&evento=511532991990119611035876488810&key=99f335de5b6212a00d76f05892840db57221258bc062533d6fabde0fd7bf11d4&hash=8ac79e2215a8f44a1828477230fdb75e" target="_blank" data-mimetype="html" data-doc="511532991990119611035876484915"><img src="infra_css/imagens/consultar.gif" title="Visualizar Documento" alt="Visualizar" class="infraImgNormal" />DESPADEC1</a> </td></tr>
+<tr class="infraTrEscura"><td>2</td><td>30/07/2018 11:20:11</td><td>Autos com Juiz para Despacho/Decisão</td><td>JRJ14695</td><td>Evento não gerou documento(s)</td></tr>
+<tr class="infraTrClara"><td>1</td><td>27/07/2018 16:09:08</td><td>Distribuído por sorteio (RJITP01F)</td><td>RJ080920</td><td>Evento não gerou documento(s)</td></tr>
+</table>
+</div><div id="divInfraBarraComandosInferior" class="infraBarraComandos">
+<br /><input tabindex="32701" type="button" name="btnImprimir" value="Imprimir" onclick="infraImprimirDiv('divInfraAreaProcesso');" class="infraButton" />&nbsp;
+<button tabindex="32702" type="button" accesskey="V" name="btnVoltar" id="btnVoltar" value="Voltar" 
+    onclick="location.href='externo_controlador.php?acao=principal&acao_origem=processo_seleciona_publica&hash=428f9e7b804fa77b7880961b2704770f';" 
+            class="infraButton"><span class="infraTeclaAtalho">V</span>oltar</button>&nbsp;
+</div>
+</form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <div class="bootstrap-styles ">
+            <button id='backTop' type="button" class="waves-effect mdc-fab mdc-fab--mini mdc-fab--exited">
+              <i class="material-icons mdc-fab__icon">keyboard_arrow_up</i>
+            </button>
+        </div>
+    
+    <input type="hidden" id="hdnInfraPrefixoCookie" name="hdnInfraPrefixoCookie" value="TRF2_Eproc_"/>
+    <div id="infraDivImpressao" class="infraImpressao infra-styles"></div>
+    
+    <script type="text/javascript" src="js/dist/main-pos.js?"></script>
+</body>
+
+
+
+</html>

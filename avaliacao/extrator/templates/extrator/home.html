@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        .accordion_body {
+            border: 1px solid rgba(0,0,0,.125);
+            border-top: 0;
+            border-radius: 0 0 .25rem .25rem;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <strong>Faça o upload do arquivo HTML para que ele seja analisado: </strong><br/>
+                        <label for="id_pagina">
+                            Arquivo
+                        </label>
+                        <input type="file" id="id_pagina" name="pagina" accept=".html">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>
+                    <strong>Processos:</strong>
+                </h1>
+                <div class="accordion" id="accordion_processos">
+                    {% for processo in processos %}
+                    <div class="card">
+                        <div class="card-header" id="heading_{{ forloop.counter }}">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_{{ forloop.counter}}" aria-controls="collapse_{{ forloop.counter }}">
+                                    <strong>Processo: </strong> {{ processo.numero }} 
+                                </button>
+                            </h2>
+                        </div>
+                    </div>
+                    <div id="collapse_{{ forloop.counter }}" class="collapse" aria-labelledby="heading_{{ forloop.counter }}" data-parent="#accordion_processos">
+                        <div class="card-body accordion_body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h5>
+                                        <strong>Capa do Processo</strong><br/>
+                                    </h5>
+                                    <strong>Nº do Processo:</strong> {{ processo.numero }}<br/>
+                                    <strong>Data de autuação:</strong> {{ processo.data_autuacao }}<br/>
+                                    <strong>Situação:</strong> {{ processo.situacao }}<br/>
+                                    <strong>Orgão Julgador:</strong> {{ processo.orgao_julgador }}<br/>
+                                    <strong>Juiz(a):</strong> {{ processo.juiz }}<br/>
+                                    <strong>Classe da Ação:</strong> {{ processo.classe_da_acao }}<br/>
+                                    <strong>Processos relacionados:</strong> {% for pr in processo.processos_relacionados %}{{ pr }}{% endfor %} 
+                                </div>
+                                <div class="col-lg-6">
+                                    <h5>
+                                        <strong>Partes e Representantes</strong>
+                                    </h5>
+                                    <strong>IMPETRANTE:</strong> {% for impte in processo.impetrante %}{{ impte }}{% endfor %}<br/>
+                                    <strong>IMPETRADO:</strong> {% for impta in processo.impetrado %}{{ impta }}{% endfor %}<br/>
+                                    <strong>INTERESSADO:</strong><br/>
+                                    {% for inte in processo.interessado %}
+                                            {{ inte }}<br/>
+                                    {% endfor %}<br/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h5>
+                                        <strong>Andamento</strong>
+                                    </h5>
+                                    <small>
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Evento</th>
+                                                <th scope="col">Data / Hora</th>
+                                                <th scope="col">Descrição</th>
+                                                <th scope="col">Usuário</th>
+                                                <th scope="col">Documentos</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for ev in processo.andamento %}
+                                            <tr>
+                                                <th scope="row">{{ ev.evento }}</th>
+                                                <td>{{ ev.data_hora}}</td>
+                                                <td>{{ ev.descricao }}</td>
+                                                <td>{{ ev.usuario }}</td>
+                                                <td>{{ ev.documentos }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
